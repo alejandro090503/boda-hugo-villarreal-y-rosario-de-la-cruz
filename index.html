@@ -512,6 +512,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 .dc-reserved-row{display:flex;align-items:center;gap:14px;text-align:left}
 .dc-color-dot{width:24px;height:24px;border-radius:50%;flex-shrink:0}
 .dc-reserved-txt{font-family:var(--serif);font-size:17px;font-weight:600;line-height:1.45;color:var(--text)}
+/* Brillo suave en nombres del hero */
+.hero-bride,.hero-groom{
+  background:linear-gradient(110deg,#003b10 0%,#003b10 38%,#2f6b3d 45%,#F3DE8A 50%,#2f6b3d 55%,#003b10 62%,#003b10 100%);
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:none;padding:0 .15em;
+  filter:drop-shadow(0 1px 10px rgba(255,255,255,.9));
+  animation:heroShine 6.5s ease-in-out infinite;
+}
+.hero-groom{animation-delay:.6s}
+@keyframes heroShine{0%{background-position:100% 50%}55%,100%{background-position:0% 50%}}
+@media(prefers-reduced-motion:reduce){.hero-bride,.hero-groom{animation:none}}
 @media(prefers-reduced-motion:reduce){.script-title,.hero-amp,.quote-sig,.footer-names,.tl-orn,.tl-pulse{animation:none!important}}
 </style>
 </head>
