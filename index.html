@@ -524,6 +524,123 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 @keyframes heroShine{0%{background-position:100% 50%}55%,100%{background-position:0% 50%}}
 @media(prefers-reduced-motion:reduce){.hero-bride,.hero-groom{animation:none}}
 @media(prefers-reduced-motion:reduce){.script-title,.hero-amp,.quote-sig,.footer-names,.tl-orn,.tl-pulse{animation:none!important}}
+
+/* ════ RONDA 2 ════ */
+/* Brillo suave en botones interactivos */
+.loc-btn,.rsvp-btn,.rsvp-float,.gr-acc-btn,.giftbox-cta{position:relative;overflow:hidden;isolation:isolate}
+.loc-btn::after,.rsvp-btn::after,.rsvp-float::after{
+  content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;pointer-events:none;z-index:1;
+  background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,0) 20%,rgba(255,240,190,.55) 50%,rgba(255,255,255,0) 80%,transparent 100%);
+  transform:skewX(-18deg);animation:btnShine 4.8s ease-in-out infinite;
+}
+.rsvp-btn::after{animation-delay:1.2s}
+@keyframes btnShine{0%,62%{left:-60%}100%{left:130%}}
+.loc-btn{background:linear-gradient(120deg,#002a0b,#003b10 45%,#0b4d1d 60%,#002a0b);box-shadow:0 6px 18px rgba(0,59,16,.22),inset 0 0 0 1px rgba(226,197,106,.35)}
+
+/* Dress code: levitación suave + glow dorado */
+.dc-fig{position:relative}
+.dc-fig::before{
+  content:'';position:absolute;top:28px;left:50%;width:170px;height:200px;transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(243,222,138,.55) 0%,rgba(226,197,106,.28) 38%,rgba(255,255,255,0) 70%);
+  filter:blur(14px);z-index:0;pointer-events:none;animation:dcGlow 4.2s ease-in-out infinite;
+}
+.dc-fig img{position:relative;z-index:1;animation:dcFloat 4.2s ease-in-out infinite}
+.dc-fig:nth-child(3) img,.dc-fig:nth-child(3)::before{animation-delay:-2.1s}
+.dc-fig-label,.dc-fig-sub{position:relative;z-index:1}
+@keyframes dcFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes dcGlow{0%,100%{opacity:.65;transform:translateX(-50%) scale(.94)}50%{opacity:1;transform:translateX(-50%) scale(1.05)}}
+
+/* Caja de regalo (boda-paola-e-ivan) */
+#regalos{padding-bottom:56px}
+.gifts-sub{max-width:330px;margin:18px auto 0}
+.giftbox-stage{position:relative;margin:34px auto 0;min-height:260px;display:flex;align-items:center;justify-content:center}
+.giftbox{position:relative;width:168px;cursor:pointer;background:none;border:none;padding:0;transition:transform .45s cubic-bezier(.2,.7,.2,1);outline:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;animation:dcFloat 4s ease-in-out infinite}
+.giftbox:hover{transform:translateY(-8px) scale(1.03)}
+.giftbox:focus-visible{outline:2px solid var(--gold);outline-offset:10px;border-radius:6px}
+.giftbox.is-open{pointer-events:none}
+.giftbox svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 30px rgba(0,59,16,.28))}
+.giftbox-lid{transform-origin:50% 100%;transition:transform .6s cubic-bezier(.34,1.4,.5,1),opacity .55s ease}
+.giftbox.is-open .giftbox-lid{transform:translateY(-52px) rotate(-14deg);opacity:0}
+.giftbox-cta{display:inline-block;margin-top:22px;font-family:var(--serif);font-size:14px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;padding-left:.3em;color:var(--gold-deep);animation:giftPulse 2.6s ease-in-out infinite;transition:opacity .4s}
+@keyframes giftPulse{0%,100%{opacity:.6}50%{opacity:1}}
+.giftbox-cta.is-hidden{opacity:0;animation:none}
+#confetti-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.gift-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;height:100vh;height:100dvh;z-index:9000;background:rgba(0,30,8,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;pointer-events:none;transition:opacity .45s ease;display:flex;align-items:center;justify-content:center;padding:18px}
+.gift-backdrop.is-open{opacity:1;pointer-events:auto}
+body.gift-locked{overflow:hidden}
+.gift-reveal{position:relative;width:100%;max-width:400px;background:#FFFDF7;border:1px solid rgba(184,146,42,.55);padding:40px 0 30px;box-shadow:0 34px 90px rgba(0,20,6,.45);opacity:0;transform:translateY(26px) scale(.94);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
+.gift-backdrop.is-open .gift-reveal{opacity:1;transform:none}
+.gift-reveal::before{content:"";position:absolute;inset:9px;border:1px solid rgba(184,146,42,.25);pointer-events:none}
+.gift-reveal-eyebrow{font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;padding-left:.34em;color:var(--gold-deep);text-align:center}
+.gift-close{position:absolute;top:12px;right:12px;z-index:3;width:40px;height:40px;border-radius:50%;border:1px solid rgba(184,146,42,.55);background:#fff;color:var(--dark);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;-webkit-appearance:none;appearance:none;transition:background .3s,color .3s,transform .3s}
+.gift-close:hover{background:var(--dark);color:#fff;transform:rotate(90deg)}
+.gift-close svg{width:16px;height:16px}
+.gr-slide{padding:20px 22px 4px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.gr-logo{height:54px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.gr-logo img{max-height:54px;max-width:210px;width:auto;height:auto;display:block}
+.gr-title{font-family:var(--serif);font-style:italic;font-weight:600;font-size:26px;color:var(--dark);margin-bottom:6px}
+.gr-bankname{font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);padding-left:.3em;margin-bottom:16px}
+.gr-accounts{width:100%;max-width:340px}
+.gr-acc{display:flex;align-items:center;gap:14px;text-align:left;padding:14px 16px;border:1px solid rgba(184,146,42,.4);background:rgba(250,247,238,.8);border-radius:4px}
+.gr-acc-info{flex:1;min-width:0}
+.gr-acc-n{font-family:var(--serif);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:3px}
+.gr-acc-c{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--dark);font-variant-numeric:tabular-nums;letter-spacing:.06em;white-space:nowrap}
+.gr-acc-btn{flex-shrink:0;width:42px;height:42px;border-radius:50%;border:1px solid rgba(184,146,42,.6);background:transparent;color:var(--gold-deep);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;-webkit-appearance:none;appearance:none;touch-action:manipulation;transition:background .3s,color .3s,transform .3s}
+.gr-acc-btn:hover,.gr-acc-btn.is-copied{background:var(--dark);color:#fff;border-color:var(--dark)}
+.gr-acc-btn svg{width:16px;height:16px}
+.gr-copied{font-family:var(--serif);font-style:italic;font-size:16px;font-weight:600;color:var(--dark);min-height:24px;margin-top:12px}
+
+/* Lluvia de sobres (boda-jeffersson-y-vanessa) */
+#sobres{padding:64px 28px 72px;overflow:hidden;background:linear-gradient(to bottom,var(--bg) 0%,var(--surface) 18%,var(--surface) 82%,var(--bg) 100%)}
+.env-rain{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.env-rain-item{position:absolute;top:-46px;will-change:transform;opacity:0}
+#sobres .env-stage{position:relative;z-index:1}
+.env-interactive{display:flex;flex-direction:column;align-items:center;cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none;border:none;background:none;padding:0;margin:26px auto 0;opacity:0;width:100%}
+.env-body{perspective:700px;position:relative;width:min(258px,74vw);aspect-ratio:260/200;filter:drop-shadow(0 10px 26px rgba(0,59,16,.18))}
+.env-body svg.env-svg{width:100%;height:100%;display:block}
+.env-flap-wrap{position:absolute;top:23%;left:6.9%;width:86.2%;height:43%;transform-origin:top center;transform-style:preserve-3d;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .65s cubic-bezier(.4,0,.2,1);pointer-events:none;z-index:2}
+.env-interactive.open .env-flap-wrap{transform:rotateX(-175deg)}
+.env-seal{position:absolute;top:52%;left:50%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:3;transition:opacity .35s ease,transform .5s cubic-bezier(.4,0,.2,1);pointer-events:none}
+.env-interactive.open .env-seal{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+.env-open-content{overflow:hidden;max-height:0;opacity:0;transition:max-height .55s .3s ease,opacity .4s .38s ease;display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 16px;text-align:center;pointer-events:none}
+.env-interactive.open .env-open-content{max-height:320px;opacity:1;pointer-events:auto;margin-top:20px}
+.env-mailbox-icon{width:42px;height:42px;color:var(--gold);margin-top:6px}
+.env-title{font-family:var(--script);font-size:clamp(30px,8.5vw,36px);line-height:1.4;padding:.08em .15em;background:linear-gradient(100deg,var(--gold-deep) 0%,var(--gold) 22%,var(--gold-hi) 45%,var(--gold) 62%,var(--gold-deep) 100%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:goldSweep 7s ease-in-out infinite}
+.env-desc{font-family:var(--serif);font-size:18px;font-weight:500;font-style:italic;color:var(--text);line-height:1.7;max-width:300px}
+.env-tap-hint{font-family:var(--serif);font-size:14px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin-top:18px;opacity:0;transition:opacity .5s ease;position:relative;z-index:1}
+.env-tap-hint.show{opacity:.9;animation:envHintPulse 2.4s ease-in-out infinite}
+.env-interactive.open~.env-tap-hint{opacity:0!important;animation:none;pointer-events:none}
+@keyframes envHintPulse{0%,100%{opacity:.55}50%{opacity:1}}
+.env-body.landed{animation:envBreathe 3.6s ease-in-out infinite}
+@keyframes envBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+
+/* QR del álbum con blur */
+.album-qr-wrap{gap:16px}
+.qr-blur{width:180px;height:180px;border-radius:12px;display:block;filter:blur(6px);opacity:.85;user-select:none;-webkit-user-drag:none;pointer-events:none}
+
+/* Indicador flotante "Confirmar asistencia" */
+.rsvp-float{
+  position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));z-index:996;
+  display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
+  padding:14px 24px;border-radius:40px;text-decoration:none;
+  font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:#fff;background:linear-gradient(120deg,#002a0b,#003b10 45%,#0b4d1d 60%,#002a0b);
+  box-shadow:0 10px 28px rgba(0,30,8,.35),inset 0 0 0 1px rgba(226,197,106,.55);
+  transform:translate(-50%,140%);opacity:0;pointer-events:none;
+  transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .45s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.rsvp-float svg{width:16px;height:16px;fill:none;stroke:var(--gold-hi);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;position:relative;z-index:2}
+.rsvp-float span{position:relative;z-index:2}
+.rsvp-float.show{transform:translate(-50%,0);opacity:1;pointer-events:auto;animation:floatBob 3.2s ease-in-out 1s infinite}
+.rsvp-float.show.away{transform:translate(-50%,140%);opacity:0;pointer-events:none;animation:none}
+@keyframes floatBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-4px)}}
+@media(max-width:400px){.rsvp-float{left:calc(50% - 40px);font-size:13px;padding:13px 18px;letter-spacing:.1em;gap:8px}}
+#footer{padding-bottom:96px}
+
+@media(prefers-reduced-motion:reduce){
+  .loc-btn::after,.rsvp-btn::after,.rsvp-float::after,.dc-fig img,.dc-fig::before,.giftbox,.env-body.landed,.rsvp-float.show{animation:none!important}
+}
 </style>
 </head>
 <body>
@@ -955,7 +1072,148 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
     </div>
   </section>
 
-  <!-- ── 11. RSVP ── -->
+  <!-- ── 12. MESA DE REGALOS ── -->
+  <section id="regalos">
+    <p class="eyebrow rv">Mesa de Regalos</p>
+    <h2 class="script-title rv">Un Detalle de Amor</h2>
+    <p class="gift-msg gifts-sub rv">Tu presencia es nuestro mejor regalo. Pero si deseas hacernos un obsequio, lo recibiremos con mucho cariño.</p>
+    <div class="giftbox-stage">
+      <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+      <div>
+        <button class="giftbox" id="giftbox" type="button" aria-label="Abrir la mesa de regalos" aria-expanded="false" aria-controls="gift-reveal">
+          <svg viewBox="0 0 200 190" fill="none" aria-hidden="true">
+            <rect x="26" y="72" width="148" height="104" rx="4" fill="#003b10"/>
+            <rect x="26" y="72" width="148" height="104" rx="4" fill="url(#gbShade)"/>
+            <rect x="88" y="72" width="24" height="104" fill="url(#gbGold)"/>
+            <rect x="26" y="112" width="148" height="15" fill="url(#gbGold)"/>
+            <rect x="26.7" y="72.7" width="146.6" height="102.6" rx="3.3" stroke="#8A6A12" stroke-width="1.4"/>
+            <g class="giftbox-lid">
+              <rect x="16" y="54" width="168" height="26" rx="4" fill="#0b4d1d"/>
+              <rect x="16.7" y="54.7" width="166.6" height="24.6" rx="3.3" stroke="#8A6A12" stroke-width="1.4"/>
+              <rect x="88" y="54" width="24" height="26" fill="url(#gbGold)"/>
+              <path d="M100 54 C100 40 84 26 70 32 C58 37 62 52 78 54 Z" fill="url(#gbGold)" stroke="#8A6A12" stroke-width="1.2"/>
+              <path d="M100 54 C100 40 116 26 130 32 C142 37 138 52 122 54 Z" fill="url(#gbGold)" stroke="#8A6A12" stroke-width="1.2"/>
+              <circle cx="100" cy="52" r="8" fill="#F3DE8A" stroke="#8A6A12" stroke-width="1.2"/>
+            </g>
+            <defs>
+              <linearGradient id="gbShade" x1="26" y1="72" x2="174" y2="176" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#ffffff" stop-opacity=".14"/><stop offset="1" stop-color="#000000" stop-opacity=".2"/>
+              </linearGradient>
+              <linearGradient id="gbGold" x1="0" y1="0" x2="1" y2="1">
+                <stop stop-color="#8A6A12"/><stop offset=".45" stop-color="#E2C56A"/><stop offset=".6" stop-color="#F3DE8A"/><stop offset="1" stop-color="#B8922A"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </button>
+        <span class="giftbox-cta" id="giftbox-cta">Toca el regalo</span>
+      </div>
+    </div>
+
+    <div class="gift-backdrop" id="gift-backdrop" role="dialog" aria-modal="true" aria-label="Mesa de regalos">
+      <div class="gift-reveal" id="gift-reveal">
+        <button class="gift-close" id="gift-close" type="button" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="gift-reveal-eyebrow">Con cariño</div>
+        <div class="gr-slide">
+          <div class="gr-logo"><img src="inbursa-logo.png" alt="Inbursa" width="580" height="152" decoding="async"></div>
+          <div class="gr-title">Transferencia bancaria</div>
+          <div class="gr-bankname">Inbursa</div>
+          <div class="gr-accounts">
+            <div class="gr-acc">
+              <div class="gr-acc-info">
+                <div class="gr-acc-n">Rosario de la Cruz Coli</div>
+                <div class="gr-acc-c">4658 2859 1295 8926</div>
+              </div>
+              <button class="gr-acc-btn copy-clabe" data-clabe="4658285912958926" type="button" aria-label="Copiar número de cuenta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="gr-copied" id="grCopied" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 12b. LLUVIA DE SOBRES (diseño boda-jeffersson-y-vanessa) ── -->
+  <section id="sobres" class="sec" style="text-align:center">
+    <div class="env-rain" id="envRain" aria-hidden="true"></div>
+    <div class="env-stage">
+      <p class="eyebrow">Celebra con Nosotros</p>
+      <h2 class="script-title">Lluvia de Sobres</h2>
+      <button class="env-interactive" id="envGift" type="button" aria-label="Sobre — toca para abrir" aria-expanded="false">
+        <div class="env-body" id="envGiftBody">
+          <svg class="env-svg" viewBox="0 0 260 200" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="envPaper" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0%" stop-color="#fffdf6"/><stop offset="100%" stop-color="#f8f1de"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="52" width="224" height="132" rx="8" fill="url(#envPaper)" stroke="rgba(184,146,42,.65)" stroke-width="1.4"/>
+            <path d="M18 184 L130 110 L242 184" stroke="rgba(184,146,42,.4)" stroke-width="1" fill="none"/>
+          </svg>
+          <div class="env-flap-wrap" aria-hidden="true">
+            <svg viewBox="0 0 224 86" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
+              <defs>
+                <linearGradient id="envFlap" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#f8f1de"/><stop offset="100%" stop-color="#fffdf6"/>
+                </linearGradient>
+              </defs>
+              <path d="M0 0 L112 86 L224 0 Z" fill="url(#envFlap)" stroke="rgba(184,146,42,.65)" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <svg class="env-seal" viewBox="0 0 60 60" aria-hidden="true">
+            <circle cx="30" cy="30" r="28" fill="#003b10"/>
+            <circle cx="30" cy="30" r="28" fill="none" stroke="#001f08" stroke-width="2" opacity=".55"/>
+            <circle cx="30" cy="30" r="21.5" fill="none" stroke="#E2C56A" stroke-width="1.1" opacity=".9"/>
+            <text x="30" y="37" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#E2C56A">R&amp;H</text>
+          </svg>
+        </div>
+        <div class="env-open-content" aria-live="polite">
+          <svg class="env-mailbox-icon" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="8" y="22" width="36" height="24" rx="5"/>
+            <path d="M8 30 Q26 38 44 30"/>
+            <rect x="18" y="8" width="16" height="16" rx="2"/>
+            <path d="M18 8 Q26 3 34 8"/>
+            <rect x="20" y="28" width="12" height="2.5" rx="1.25" fill="currentColor" stroke="none" opacity=".4"/>
+          </svg>
+          <p class="env-title">Tu Presencia es Nuestro Regalo</p>
+          <p class="env-desc">El día del evento habrá un buzón donde podrás depositar tu sobre con mucho cariño.</p>
+        </div>
+      </button>
+      <p class="env-tap-hint" id="envGiftHint">Toca para abrir</p>
+    </div>
+  </section>
+
+  <!-- ── 13. ÁLBUM COMPARTIDO ── -->
+  <section id="album">
+    <div class="ornament rv" style="padding:0 0 8px;background:transparent;">
+      <svg viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity=".5" stroke="#B8922A">
+          <path d="M180 58 C158 42 118 34 68 16" stroke-width="1.3"/>
+          <path d="M180 58 C202 42 242 34 292 16" stroke-width="1.3"/>
+          <path d="M138 36 C130 26 122 20 116 12" stroke-width=".9"/>
+          <path d="M222 36 C230 26 238 20 244 12" stroke-width=".9"/>
+        </g>
+        <g opacity=".5" fill="#B8922A">
+          <circle cx="116" cy="12" r="2.5"/><circle cx="244" cy="12" r="2.5"/>
+        </g>
+        <circle cx="180" cy="48" r="3" fill="#B8922A" opacity=".5"/>
+        <path d="M180 58 L180 50" stroke="#B8922A" stroke-width="1" opacity=".5"/>
+      </svg>
+    </div>
+    <p class="eyebrow rv">Comparte el Momento</p>
+    <h2 class="script-title rv">Álbum Compartido</h2>
+    <p class="album-note rv">¡Queremos ver la boda a través de tus ojos! Escanea el código y sube tus fotos al álbum de Rosario &amp; Hugo.</p>
+    <div class="album-qr-wrap rv">
+      <!-- PENDIENTE: link del álbum compartido (Drive). Al recibirlo, cambiar data= y quitar .qr-blur -->
+      <img class="qr-blur" src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&color=003b10&bgcolor=FFFFFF&margin=18&data=https%3A%2F%2Fboda-hugo-villarreal-y-rosario-de-la-cruz.vercel.app" alt="" aria-hidden="true">
+      <span class="qr-label">El código QR estará disponible el día de la boda</span>
+    </div>
+  </section>
+
+  <!-- ── 14. RSVP ── -->
   <section id="rsvp">
     <div class="rsvp-card">
       <svg class="rsvp-corner rsvp-corner--tl" viewBox="0 0 52 52" fill="none" aria-hidden="true"><path d="M2 50 L2 2 L50 2" stroke="var(--accent)" stroke-width=".9" opacity=".6"/><circle cx="2" cy="2" r="2.5" fill="var(--accent)" opacity=".5"/></svg>
@@ -1015,55 +1273,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
     </div>
   </section>
 
-  <!-- ── 12. MESA DE REGALOS ── -->
-  <section id="regalos">
-    <p class="eyebrow rv">Mesa de Regalos</p>
-    <h2 class="script-title rv">Un Detalle de Amor</h2>
-    <div class="gift-card rv">
-      <p class="gift-msg">Tu presencia es nuestro mejor regalo. Pero si deseas hacernos un obsequio, lo recibiremos con mucho cariño.</p>
-      <div class="gift-divider"></div>
-      <div class="gift-bank">
-        <p class="gift-bank-lbl">Transferencia · Inbursa</p>
-        <p class="gift-bank-num" id="giftNum">4658 2859 1295 8926</p>
-        <p class="gift-bank-name">Rosario de la Cruz Coli</p>
-        <button class="btn-store btn-liverpool gift-copy" type="button" data-copy="4658285912958926">Copiar número</button>
-      </div>
-      <div class="gift-divider" style="margin-top:26px"></div>
-      <div class="gift-sobres">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="25" rx="2"/><path d="M6 14l18 13 18-13"/></svg>
-        <p class="gift-bank-lbl">Lluvia de sobres</p>
-        <p class="gift-sobres-txt">El día del evento habrá un buzón para recibir tu sobre.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── 13. ÁLBUM COMPARTIDO ── -->
-  <section id="album">
-    <div class="ornament rv" style="padding:0 0 8px;background:transparent;">
-      <svg viewBox="0 0 360 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g opacity=".5" stroke="#B8922A">
-          <path d="M180 58 C158 42 118 34 68 16" stroke-width="1.3"/>
-          <path d="M180 58 C202 42 242 34 292 16" stroke-width="1.3"/>
-          <path d="M138 36 C130 26 122 20 116 12" stroke-width=".9"/>
-          <path d="M222 36 C230 26 238 20 244 12" stroke-width=".9"/>
-        </g>
-        <g opacity=".5" fill="#B8922A">
-          <circle cx="116" cy="12" r="2.5"/><circle cx="244" cy="12" r="2.5"/>
-        </g>
-        <circle cx="180" cy="48" r="3" fill="#B8922A" opacity=".5"/>
-        <path d="M180 58 L180 50" stroke="#B8922A" stroke-width="1" opacity=".5"/>
-      </svg>
-    </div>
-    <p class="eyebrow rv">Comparte el Momento</p>
-    <h2 class="script-title rv">Álbum Compartido</h2>
-    <p class="album-note rv">¡Queremos ver la boda a través de tus ojos! Escanea el código y sube tus fotos al álbum de Rosario &amp; Hugo.</p>
-    <div class="album-qr-wrap rv">
-      <!-- PENDIENTE: link del álbum compartido (Drive) para generar el QR -->
-      <div class="qr-pend" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="26" rx="3"/><circle cx="24" cy="25" r="7"/><path d="M17 12l3-5h8l3 5"/></svg></div>
-      <span class="qr-label">El código QR estará disponible el día de la boda</span>
-    </div>
-  </section>
-
   <!-- ── 13. FOOTER ── -->
   <footer id="footer">
     <div class="footer-names rv">Rosario &amp; Hugo</div>
@@ -1096,6 +1305,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
     <svg class="vinyl-icon-pause" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
   </div>
 </button>
+
+<a class="rsvp-float" id="rsvpFloat" href="#rsvp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+  <span>Confirmar asistencia</span>
+</a>
 
 <div id="env-flash"></div>
 
@@ -1419,6 +1633,96 @@ function initEnvelope(){
   }
 })();
 
+/* ── MESA DE REGALOS: caja + confetti + modal (boda-paola-e-ivan) ── */
+function initGiftBox(){
+  var box=document.getElementById('giftbox'),cta=document.getElementById('giftbox-cta'),
+      reveal=document.getElementById('gift-backdrop'),closeB=document.getElementById('gift-close'),
+      canvas=document.getElementById('confetti-canvas');
+  if(!box||!reveal)return;
+  if(reveal.parentElement!==document.body)document.body.appendChild(reveal);
+  function burst(){
+    if(!canvas||!canvas.getContext)return;
+    var ctx=canvas.getContext('2d'),dpr=Math.min(window.devicePixelRatio||1,2),stage=canvas.parentElement;
+    var W=stage.offsetWidth,H=stage.offsetHeight;canvas.width=W*dpr;canvas.height=H*dpr;ctx.scale(dpr,dpr);
+    var colors=['#B8922A','#E2C56A','#8A6A12','#003b10','#F3DE8A','#FFFFFF','#2f6b3d'],parts=[],cx=W/2,cy=H/2,n=70;
+    for(var i=0;i<n;i++){var a=(Math.PI*2*i/n)+(i%7)*.11,sp=3.4+(i%11)*.62;
+      parts.push({x:cx,y:cy,vx:Math.cos(a)*sp*(.6+(i%5)*.14),vy:Math.sin(a)*sp*(.6+(i%3)*.2)-3.6,w:5+(i%4)*2.4,h:3+(i%3)*2,rot:(i%360)*.0175,vr:(i%2?1:-1)*(.06+(i%5)*.02),c:colors[i%colors.length]});}
+    var t0=null;
+    function frame(ts){if(t0===null)t0=ts;var el=(ts-t0)/1000,alive=false,life=Math.max(0,1-el/2.6);ctx.clearRect(0,0,W,H);
+      for(var i=0;i<parts.length;i++){var p=parts[i];p.vy+=.14;p.vx*=.992;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;
+        if(life>0&&p.y<H+40){alive=true;ctx.save();ctx.globalAlpha=life;ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();}}
+      if(alive)requestAnimationFrame(frame);else ctx.clearRect(0,0,W,H);}
+    requestAnimationFrame(frame);
+  }
+  var isOpen=false,savedY=0;
+  function lock(){savedY=window.pageYOffset||0;document.body.style.position='fixed';document.body.style.top=(-savedY)+'px';document.body.style.left='0';document.body.style.right='0';document.body.classList.add('gift-locked');}
+  function unlock(){document.body.classList.remove('gift-locked');document.body.style.position='';document.body.style.top='';document.body.style.left='';document.body.style.right='';window.scrollTo(0,savedY);}
+  function openGift(){if(isOpen)return;isOpen=true;box.classList.add('is-open');box.setAttribute('aria-expanded','true');if(cta)cta.classList.add('is-hidden');burst();
+    setTimeout(function(){reveal.classList.add('is-open');lock();},240);}
+  function closeGift(){if(!isOpen)return;isOpen=false;reveal.classList.remove('is-open');unlock();
+    setTimeout(function(){box.classList.remove('is-open');box.setAttribute('aria-expanded','false');if(cta)cta.classList.remove('is-hidden');},420);}
+  box.addEventListener('click',openGift);
+  if(closeB)closeB.addEventListener('click',closeGift);
+  reveal.addEventListener('click',function(e){if(e.target===reveal)closeGift();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&isOpen)closeGift();});
+  var msg=document.getElementById('grCopied');
+  document.querySelectorAll('.copy-clabe').forEach(function(b){b.addEventListener('click',function(){
+    var done=function(){b.classList.add('is-copied');if(msg)msg.textContent='¡Número copiado!';setTimeout(function(){b.classList.remove('is-copied');if(msg)msg.textContent='';},1800);};
+    if(navigator.clipboard)navigator.clipboard.writeText(b.dataset.clabe).then(done,done);else done();
+  });});
+}
+
+/* ── LLUVIA DE SOBRES (boda-jeffersson-y-vanessa) ── */
+function initSobres(){
+  var sec=document.getElementById('sobres'),rain=document.getElementById('envRain'),
+      btn=document.getElementById('envGift'),body=document.getElementById('envGiftBody'),hint=document.getElementById('envGiftHint');
+  if(!sec||!rain||!btn)return;
+  var raining=true,landed=false,spawnCall=null,alive=0,MAX_ALIVE=18;
+  function makeEnvelope(){
+    if(alive>=MAX_ALIVE)return;alive++;
+    var el=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    el.setAttribute('viewBox','0 0 34 24');el.setAttribute('class','env-rain-item');
+    var w=16+Math.random()*16;el.style.width=w+'px';el.style.height=(w*24/34)+'px';el.style.left=(Math.random()*100)+'%';
+    el.innerHTML='<rect x="1" y="1" width="32" height="22" rx="2.5" fill="#fffdf6" stroke="#B8922A" stroke-width="1.2"/>'+
+                 '<path d="M1 1 L17 13 L33 1" fill="none" stroke="#B8922A" stroke-width="1.2" stroke-linejoin="round"/>';
+    rain.appendChild(el);
+    var H=sec.offsetHeight+80,dur=5+Math.random()*4;
+    function kill(){if(el.parentNode){el.remove();alive--;}}
+    gsap.timeline({onComplete:kill})
+      .fromTo(el,{y:-46,x:0,rotation:(Math.random()-.5)*50,opacity:0},{y:H,x:(Math.random()-.5)*70,rotation:(Math.random()-.5)*160,duration:dur,ease:'none'},0)
+      .fromTo(el,{opacity:0},{opacity:.8,duration:dur*.18,ease:'power1.out'},0)
+      .to(el,{opacity:0,duration:dur*.25,ease:'power1.in'},dur*.75);
+  }
+  function scheduleSpawn(){spawnCall=gsap.delayedCall(.52,function(){if(!raining)return;makeEnvelope();scheduleSpawn();});}
+  function stopRain(){raining=false;if(spawnCall)spawnCall.kill();gsap.to(rain,{opacity:0,duration:1.1,ease:'power2.out',onComplete:function(){rain.innerHTML='';alive=0;}});}
+  function land(){
+    if(landed)return;landed=true;stopRain();
+    gsap.fromTo(btn,{opacity:0,y:-150,rotation:-12,scale:.82},{opacity:1,y:0,rotation:0,scale:1,duration:1.15,ease:'back.out(1.5)',
+      onComplete:function(){if(body)body.classList.add('landed');if(hint)hint.classList.add('show');}});
+  }
+  for(var i=0;i<7;i++)gsap.delayedCall(i*.26,makeEnvelope);
+  scheduleSpawn();
+  ScrollTrigger.create({trigger:sec,start:'center 55%',once:true,onEnter:land,onEnterBack:land});
+  /* Red de seguridad: si el trigger no dispara, el sobre aparece igual */
+  setTimeout(function(){var r=sec.getBoundingClientRect();if(!landed&&r.top<innerHeight)land();},400);
+  btn.addEventListener('click',function(e){
+    e.preventDefault();if(!landed){land();return;}
+    var open=btn.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');
+    if(open&&body)body.classList.remove('landed');ScrollTrigger.refresh();
+  });
+}
+
+/* ── Indicador flotante "Confirmar asistencia" ── */
+function initRsvpFloat(){
+  var f=document.getElementById('rsvpFloat'),rs=document.getElementById('rsvp');
+  if(!f||!rs)return;
+  f.classList.add('show');
+  f.addEventListener('click',function(e){e.preventDefault();rs.scrollIntoView({behavior:'smooth',block:'start'});});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){f.classList.toggle('away',en[0].isIntersecting);},{threshold:.25}).observe(rs);
+  }
+}
+
 function initAll(){
   document.querySelectorAll('.rv').forEach(el=>{
     gsap.fromTo(el,{y:36,opacity:0},{y:0,opacity:1,duration:0.9,ease:'power3.out',
@@ -1455,10 +1759,9 @@ function initAll(){
       }});
   })();
 
-  document.querySelectorAll('.gift-copy').forEach(b=>b.addEventListener('click',()=>{
-    const v=b.dataset.copy,done=()=>{b.textContent='¡Copiado!';setTimeout(()=>b.textContent='Copiar número',1800);};
-    if(navigator.clipboard)navigator.clipboard.writeText(v).then(done,done);else done();
-  }));
+  initGiftBox();
+  initSobres();
+  initRsvpFloat();
 
   (function initCarousel(){
     const slides=document.querySelectorAll('.gal-slide');
