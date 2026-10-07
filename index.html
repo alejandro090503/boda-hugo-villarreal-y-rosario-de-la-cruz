@@ -272,6 +272,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
 .gal-btn svg{width:18px;height:18px;stroke:var(--dark);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 .gal-prev{left:14px}.gal-next{right:14px}
 .gal-dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:20px}
+.gal-dots{flex-wrap:wrap;justify-content:center;max-width:300px;margin-left:auto;margin-right:auto}
 .gal-dot{width:7px;height:7px;border-radius:4px;background:var(--accent);opacity:.28;transition:all .4s cubic-bezier(.4,0,.2,1);cursor:pointer;border:none;padding:0}
 .gal-dot.active{opacity:1;width:22px}
 
@@ -1041,19 +1042,71 @@ body.gift-locked{overflow:hidden}
     <div class="gal-wrap rv">
       <div class="gal-carousel" id="galCarousel">
         <div class="gal-slide active">
-          <img src="hero.webp" alt="Rosario &amp; Hugo" loading="eager">
+          <img src="fotos/f00.webp" alt="Rosario &amp; Hugo" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="g01.webp" alt="Rosario &amp; Hugo" loading="lazy">
+          <img src="fotos/f01.webp" alt="Rosario &amp; Hugo" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="g02.webp" alt="Rosario &amp; Hugo" loading="lazy">
+          <img src="fotos/f02.webp" alt="Rosario &amp; Hugo" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="g03.webp" alt="Rosario &amp; Hugo" loading="lazy">
+          <img src="fotos/f03.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f04.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f05.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f06.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f07.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f09.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f10.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f11.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f12.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f13.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f14.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f15.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f16.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f17.webp" alt="Rosario &amp; Hugo" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <button class="gal-btn gal-prev" aria-label="Anterior">
@@ -1068,6 +1121,19 @@ body.gift-locked{overflow:hidden}
         <button class="gal-dot" aria-label="Foto 2"></button>
         <button class="gal-dot" aria-label="Foto 3"></button>
         <button class="gal-dot" aria-label="Foto 4"></button>
+        <button class="gal-dot" aria-label="Foto 5"></button>
+        <button class="gal-dot" aria-label="Foto 6"></button>
+        <button class="gal-dot" aria-label="Foto 7"></button>
+        <button class="gal-dot" aria-label="Foto 8"></button>
+        <button class="gal-dot" aria-label="Foto 9"></button>
+        <button class="gal-dot" aria-label="Foto 10"></button>
+        <button class="gal-dot" aria-label="Foto 11"></button>
+        <button class="gal-dot" aria-label="Foto 12"></button>
+        <button class="gal-dot" aria-label="Foto 13"></button>
+        <button class="gal-dot" aria-label="Foto 14"></button>
+        <button class="gal-dot" aria-label="Foto 15"></button>
+        <button class="gal-dot" aria-label="Foto 16"></button>
+        <button class="gal-dot" aria-label="Foto 17"></button>
       </div>
     </div>
   </section>
