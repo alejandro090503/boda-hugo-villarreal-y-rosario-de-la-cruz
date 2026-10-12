@@ -432,7 +432,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:
   background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
   animation:goldSweep 7s ease-in-out infinite;
 }
-.script-title{padding:0 .12em}
+.script-title{padding:.34em .16em .18em;margin:-.34em auto -.18em;font-size:clamp(38px,10.6vw,52px);line-height:1.15}
+.quote-sig,.footer-names,.env-title,.hero-amp{padding:.3em .2em .18em;margin-top:-.3em;margin-bottom:-.18em}
 @keyframes goldSweep{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 .hero-bride,.hero-groom{color:var(--dark);text-shadow:0 1px 18px rgba(255,255,255,.85)}
 .eyebrow{color:var(--gold-deep);font-weight:600;font-size:13px}
@@ -762,8 +763,8 @@ body.gift-locked{overflow:hidden}
   <!-- ── 4. FRASE ── -->
   <section id="quote" class="sec sec--bg">
     <p class="quote-txt rv">
-      &ldquo;Grábame como un sello sobre tu corazón;<br>
-      llévame como una marca sobre tu brazo.&rdquo;
+      &ldquo;Ponme como un sello sobre tu corazón,<br>
+      como una marca sobre tu brazo.&rdquo;
     </p>
     <span class="quote-cita rv">Cantares 8:6</span>
     <span class="quote-sig rv">Hugo &amp; Rosario</span>
@@ -1016,7 +1017,7 @@ body.gift-locked{overflow:hidden}
           <circle cx="36" cy="46" r="2" style="--len:14" fill="var(--accent)"/>
         </svg>
       </div>
-      <p class="kids-text rv">Con todo el cariño, hemos decidido que nuestra celebración sea exclusivamente para adultos. Agradecemos profundamente tu comprensión y esperamos disfrutes una noche libre, a tu ritmo, junto a nosotros.</p>
+      <p class="kids-text rv">Con mucho cariño, hemos decidido que nuestra celebración sea solo para adultos. ¡Gracias por tu comprensión!</p>
       <p class="rv" style="font-family:var(--script);font-size:clamp(36px,5vw,52px);color:var(--dark);margin-top:32px;line-height:1.1">No Niños</p>
     </div>
   </section>
@@ -1222,7 +1223,7 @@ body.gift-locked{overflow:hidden}
             <circle cx="30" cy="30" r="28" fill="#003b10"/>
             <circle cx="30" cy="30" r="28" fill="none" stroke="#001f08" stroke-width="2" opacity=".55"/>
             <circle cx="30" cy="30" r="21.5" fill="none" stroke="#E2C56A" stroke-width="1.1" opacity=".9"/>
-            <text x="30" y="37" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#E2C56A">R&amp;H</text>
+            <text x="30" y="37" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="22" fill="#E2C56A">H&amp;R</text>
           </svg>
         </div>
         <div class="env-open-content" aria-live="polite">
@@ -1293,7 +1294,7 @@ body.gift-locked{overflow:hidden}
         <div class="eyebrow">Confirmación de Asistencia</div>
         <h2 class="rsvp-title">Tu presencia <em>significa</em> todo</h2>
         <p class="rsvp-text">Nos encantaría saber que estarás con nosotros.</p>
-        <div class="rsvp-limit"><span class="rsvp-limit-lbl">Confirma antes del</span><span class="rsvp-limit-date">4 de noviembre de 2026</span></div>
+        <div class="rsvp-limit"><span class="rsvp-limit-lbl">Confirma antes del</span><span class="rsvp-limit-date">sábado 31 de octubre de 2026</span></div>
 
         <p id="rsvp-name-display" style="display:none;font-family:var(--script);font-size:clamp(30px,7vw,44px);color:var(--accent);line-height:1.2;margin:18px auto 4px;"></p>
 
@@ -1323,7 +1324,7 @@ body.gift-locked{overflow:hidden}
 
         <div class="rsvp-deadline">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
-          Fecha límite: 4 de noviembre de 2026
+          Fecha límite: sábado 31 de octubre de 2026
         </div>
       </div>
     </div>
@@ -1331,7 +1332,7 @@ body.gift-locked{overflow:hidden}
 
   <!-- ── 13. FOOTER ── -->
   <footer id="footer">
-    <p class="closing-verse rv">&ldquo;Como llama divina<br>es el fuego ardiente del amor.<br>Ni las muchas aguas pueden apagarlo,<br>ni los ríos pueden extinguirlo.&rdquo;</p>
+    <p class="closing-verse rv">&ldquo;Las muchas aguas no podrán apagar el amor,<br>Ni lo ahogarán los ríos.&rdquo;</p>
     <span class="closing-cita rv">Cantares 8:7</span>
     <div class="footer-names rv">Hugo &amp; Charo</div>
     <div class="footer-date rv">13 &middot; Noviembre &middot; 2026</div>
@@ -1510,7 +1511,7 @@ function initEnvelope(){
 (function(){
   var PANEL_API = 'https://panel-invitados.vercel.app/api/confirmar';
   var RSVP_URL  = 'https://boda-hugo-villarreal-y-rosario-de-la-cruz.vercel.app';
-  var DEADLINE  = new Date(2026, 10, 4, 23, 59, 59, 999);
+  var DEADLINE  = new Date(2026, 9, 31, 23, 59, 59, 999);
   var frozen    = Date.now() > DEADLINE.getTime();
 
   var params    = new URLSearchParams(window.location.search);
