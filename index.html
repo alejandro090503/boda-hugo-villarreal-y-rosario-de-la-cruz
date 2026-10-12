@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#FFFFFF">
-<title>Rosario &amp; Hugo · 13 · Noviembre · 2026</title>
-<meta name="description" content="Rosario &amp; Hugo · Nuestra boda · Viernes 13 de noviembre de 2026 · Monclova, Coahuila">
+<title>Hugo &amp; Rosario · 13 · Noviembre · 2026</title>
+<meta name="description" content="Hugo &amp; Rosario · Nuestra boda · Viernes 13 de noviembre de 2026 · Monclova, Coahuila">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://boda-hugo-villarreal-y-rosario-de-la-cruz.vercel.app">
-<meta property="og:title" content="Rosario &amp; Hugo · Nuestra Boda">
+<meta property="og:title" content="Hugo &amp; Rosario · Nuestra Boda">
 <meta property="og:description" content="Viernes 13 de noviembre de 2026 · Monclova, Coahuila. ¡Acompáñanos!">
 <meta property="og:image" content="https://boda-hugo-villarreal-y-rosario-de-la-cruz.vercel.app/og-image.jpg?v=2">
 <meta property="og:image:width" content="1200">
@@ -642,6 +642,20 @@ body.gift-locked{overflow:hidden}
 @media(prefers-reduced-motion:reduce){
   .loc-btn::after,.rsvp-btn::after,.rsvp-float::after,.dc-fig img,.dc-fig::before,.giftbox,.env-body.landed,.rsvp-float.show{animation:none!important}
 }
+
+/* ════ RONDA 3 ════ */
+.rsvp-pases-num,.rsvp-limit-date,.rsvp-deadline,.gr-acc-c,.loc-time,.tl-t,.cd-num{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.rsvp-text{margin-bottom:18px}
+.rsvp-limit{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin:0 auto 30px;padding:14px 26px;border:1.5px solid var(--gold);border-radius:14px;background:linear-gradient(160deg,#FFFDF5,#F7EFD6)}
+.rsvp-limit-lbl{font-family:var(--serif);font-size:14px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep)}
+.rsvp-limit-date{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--dark);line-height:1.2}
+.rsvp-pases-label{font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:.2em;color:var(--dark);opacity:1}
+.rsvp-pases-num{font-family:var(--serif);font-weight:700;font-size:52px;line-height:1;
+  background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--dark);animation:none;padding:0 .1em}
+.rsvp-deadline{font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:none;color:var(--dark);padding-left:0;margin-top:28px}
+.rsvp-deadline svg{width:16px;height:16px;color:var(--gold-deep)}
+.closing-verse{font-family:var(--serif);font-style:italic;font-size:20px;font-weight:500;line-height:1.75;color:var(--dark);max-width:330px;margin:0 auto}
+.closing-cita{display:block;margin:14px 0 30px;font-family:var(--serif);font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
 </style>
 </head>
 <body>
@@ -651,7 +665,7 @@ body.gift-locked{overflow:hidden}
 
 <!-- ═══════════════════════════════════════════ ENVELOPE OPENING -->
 <div id="envelope-screen">
-  <img id="envImage" src="sobre.jpg" alt="Invitación de boda de Rosario y Hugo">
+  <img id="envImage" src="sobre.jpg" alt="Invitación de boda de Hugo y Rosario">
   <video id="envVideo" src="sobre-video.mp4" muted playsinline preload="auto" poster="sobre.jpg"></video>
   <div class="env-tap" id="envTap">Toca para abrir</div>
 </div>
@@ -664,9 +678,9 @@ body.gift-locked{overflow:hidden}
     <div class="hero-bg"></div>
     <div class="hero-veil"></div>
     <div class="hero-content">
-      <span class="hero-bride rv">Rosario</span>
+      <span class="hero-bride rv">Hugo</span>
       <span class="hero-amp rv">&amp;</span>
-      <span class="hero-groom rv">Hugo</span>
+      <span class="hero-groom rv">Rosario</span>
     </div>
     <div class="scroll-hint" id="scrollHint">
       <span class="scroll-hint-txt">Desliza</span>
@@ -748,10 +762,11 @@ body.gift-locked{overflow:hidden}
   <!-- ── 4. FRASE ── -->
   <section id="quote" class="sec sec--bg">
     <p class="quote-txt rv">
-      &ldquo;Y si alguno prevaleciere contra uno, dos le resistirán; y cordón de tres dobleces no se rompe pronto.&rdquo;
+      &ldquo;Grábame como un sello sobre tu corazón;<br>
+      llévame como una marca sobre tu brazo.&rdquo;
     </p>
-    <span class="quote-cita rv">Eclesiastés 4:12</span>
-    <span class="quote-sig rv">Rosario &amp; Hugo</span>
+    <span class="quote-cita rv">Cantares 8:6</span>
+    <span class="quote-sig rv">Hugo &amp; Rosario</span>
   </section>
 
   <!-- ── 5. FAMILIA ── -->
@@ -790,8 +805,7 @@ body.gift-locked{overflow:hidden}
     <div class="family-parents rv">
       <div class="family-side">
         <p class="family-label">Padres del Novio</p>
-        <p class="family-names">José Villarreal <span class="fam-cruz" aria-label="en memoria">✟</span><br>&amp;<br>Miriam Hernández <span class="fam-cruz" aria-label="en memoria">✟</span></p>
-        <p class="fam-memoria">Quienes nos acompañan desde el cielo</p>
+        <p class="family-names">José Villarreal González&nbsp;<span class="fam-cruz" aria-label="en memoria">✟</span><br>&amp;<br>Miriam Hernández Yáñez&nbsp;<span class="fam-cruz" aria-label="en memoria">✟</span></p>
       </div>
       <div class="family-divider-v"></div>
       <div class="family-side">
@@ -800,36 +814,6 @@ body.gift-locked{overflow:hidden}
       </div>
     </div>
 
-    <p class="eyebrow padrinos-eyebrow rv">Nuestros Padrinos</p>
-    <div class="padrinos-grid rv">
-      <!-- PENDIENTE: nombres de padrinos -->
-      <div class="padrino-item padrino-pend">Por confirmar</div>
-    </div>
-  </section>
-
-  <!-- ── ORNAMENTO B ── -->
-  <div class="ornament rv">
-    <svg viewBox="0 0 260 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="20" y1="16" x2="112" y2="16" stroke="#B8922A" stroke-width="1" opacity=".4"/>
-      <rect x="125" y="9" width="10" height="10" rx="1" transform="rotate(45 130 14)" fill="#B8922A" opacity=".5"/>
-      <line x1="148" y1="16" x2="240" y2="16" stroke="#B8922A" stroke-width="1" opacity=".4"/>
-      <circle cx="20" cy="16" r="2" fill="#B8922A" opacity=".35"/>
-      <circle cx="240" cy="16" r="2" fill="#B8922A" opacity=".35"/>
-    </svg>
-  </div>
-
-  <!-- ── 6. CORTEJO (Damas de Honor) ── -->
-  <section id="cortejo" class="sec sec--bg">
-    <h2 class="script-title rv">Damas de Honor</h2>
-    <div class="cortejo-cols rv">
-      <div class="cortejo-col">
-        <span class="cortejo-col-label">Nos acompañan</span>
-        <ul class="cortejo-list">
-          <!-- PENDIENTE: damas de honor -->
-          <li class="padrino-pend">Por confirmar</li>
-        </ul>
-      </div>
-    </div>
   </section>
 
   <!-- ── ORNAMENTO A (bg → surface) ── -->
@@ -882,7 +866,7 @@ body.gift-locked{overflow:hidden}
         </div>
         <p class="loc-title">Ceremonia</p>
         <!-- PENDIENTE: foto de la iglesia -->
-        <p class="loc-time">6:00 pm</p>
+        <p class="loc-time">7:00 pm</p>
         <p class="loc-venue">Primera Iglesia Bautista<br>de Monclova<br><small>Monclova, Coahuila</small></p>
         <a href="https://maps.app.goo.gl/SjvRc8ThejLk65rL8" target="_blank" rel="noopener" class="loc-btn">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -903,7 +887,7 @@ body.gift-locked{overflow:hidden}
         </div>
         <p class="loc-title">Recepción</p>
         <!-- PENDIENTE: foto del salón -->
-        <p class="loc-time">8:00 pm</p>
+        <p class="loc-time">9:00 pm</p>
         <p class="loc-venue">Salón Venecia<br>Continental Las Palapas<br><small>Monclova, Coahuila</small></p>
         <a href="https://maps.app.goo.gl/SipT6ZuV7FcCr25E7" target="_blank" rel="noopener" class="loc-btn">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -944,19 +928,19 @@ body.gift-locked{overflow:hidden}
       </svg>
       <div class="tl-row" data-side="left">
         <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-        <div class="tl-row-inner"><p class="tl-t">6:00 PM</p><p class="tl-ev">Ceremonia Religiosa</p><p class="tl-de">Primera Iglesia Bautista de Monclova</p></div>
+        <div class="tl-row-inner"><p class="tl-t">7:00 PM</p><p class="tl-ev">Ceremonia de nuestra boda</p><p class="tl-de">Primera Iglesia Bautista de Monclova</p></div>
       </div>
       <div class="tl-row" data-side="right">
         <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-        <div class="tl-row-inner"><p class="tl-t">8:00 PM</p><p class="tl-ev">Recepción</p><p class="tl-de">Salón Venecia · Continental Las Palapas</p></div>
+        <div class="tl-row-inner"><p class="tl-t">9:00 PM</p><p class="tl-ev">Recepción</p><p class="tl-de">Salón Venecia · Continental Las Palapas</p></div>
       </div>
       <div class="tl-row" data-side="left">
         <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-        <div class="tl-row-inner"><p class="tl-t">9:00 PM</p><p class="tl-ev">Entrada de los novios</p><p class="tl-de">Recibamos juntos a Rosario &amp; Hugo</p></div>
+        <div class="tl-row-inner"><p class="tl-t">9:30 PM</p><p class="tl-ev">Entrada de los novios</p><p class="tl-de">Recibamos juntos a Hugo &amp; Rosario</p></div>
       </div>
       <div class="tl-row" data-side="right">
         <div class="tl-orn"></div><div class="tl-pulse"></div><div class="tl-dot"></div>
-        <div class="tl-row-inner"><p class="tl-t">10:00 PM</p><p class="tl-ev">Cena</p><p class="tl-de">Compartimos la mesa</p></div>
+        <div class="tl-row-inner"><p class="tl-t">11:00 PM</p><p class="tl-ev">Cena</p><p class="tl-de">Compartimos la mesa</p></div>
       </div>
     </div>
   </section>
@@ -1042,71 +1026,75 @@ body.gift-locked{overflow:hidden}
     <div class="gal-wrap rv">
       <div class="gal-carousel" id="galCarousel">
         <div class="gal-slide active">
-          <img src="fotos/f00.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f00.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f01.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f01.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f02.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f02.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f03.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f03.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f04.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f04.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f05.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f05.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f06.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f06.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f07.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f07.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f09.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f09.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f10.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f10.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f11.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f12.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f12.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f13.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f13.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f14.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f14.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f15.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f15.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f16.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f16.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f17.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <div class="gal-slide">
-          <img src="fotos/f17.webp" alt="Rosario &amp; Hugo" decoding="async">
+          <img src="fotos/f18.webp" alt="Hugo &amp; Rosario" decoding="async">
+          <div class="gal-vignette"></div>
+        </div>
+        <div class="gal-slide">
+          <img src="fotos/f19.webp" alt="Hugo &amp; Rosario" decoding="async">
           <div class="gal-vignette"></div>
         </div>
         <button class="gal-btn gal-prev" aria-label="Anterior">
@@ -1134,19 +1122,20 @@ body.gift-locked{overflow:hidden}
         <button class="gal-dot" aria-label="Foto 15"></button>
         <button class="gal-dot" aria-label="Foto 16"></button>
         <button class="gal-dot" aria-label="Foto 17"></button>
+        <button class="gal-dot" aria-label="Foto 18"></button>
       </div>
     </div>
   </section>
 
   <!-- ── 12. MESA DE REGALOS ── -->
   <section id="regalos">
-    <p class="eyebrow rv">Mesa de Regalos</p>
+    <p class="eyebrow rv">Si deseas obsequiarnos</p>
     <h2 class="script-title rv">Un Detalle de Amor</h2>
     <p class="gift-msg gifts-sub rv">Tu presencia es nuestro mejor regalo. Pero si deseas hacernos un obsequio, lo recibiremos con mucho cariño.</p>
     <div class="giftbox-stage">
       <canvas id="confetti-canvas" aria-hidden="true"></canvas>
       <div>
-        <button class="giftbox" id="giftbox" type="button" aria-label="Abrir la mesa de regalos" aria-expanded="false" aria-controls="gift-reveal">
+        <button class="giftbox" id="giftbox" type="button" aria-label="Ver datos para transferencia" aria-expanded="false" aria-controls="gift-reveal">
           <svg viewBox="0 0 200 190" fill="none" aria-hidden="true">
             <rect x="26" y="72" width="148" height="104" rx="4" fill="#003b10"/>
             <rect x="26" y="72" width="148" height="104" rx="4" fill="url(#gbShade)"/>
@@ -1171,27 +1160,27 @@ body.gift-locked{overflow:hidden}
             </defs>
           </svg>
         </button>
-        <span class="giftbox-cta" id="giftbox-cta">Toca el regalo</span>
+        <span class="giftbox-cta" id="giftbox-cta">Toca el regalo para ver los datos</span>
       </div>
     </div>
 
-    <div class="gift-backdrop" id="gift-backdrop" role="dialog" aria-modal="true" aria-label="Mesa de regalos">
+    <div class="gift-backdrop" id="gift-backdrop" role="dialog" aria-modal="true" aria-label="Datos para transferencia">
       <div class="gift-reveal" id="gift-reveal">
         <button class="gift-close" id="gift-close" type="button" aria-label="Cerrar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
         <div class="gift-reveal-eyebrow">Con cariño</div>
         <div class="gr-slide">
-          <div class="gr-logo"><img src="inbursa-logo.png" alt="Inbursa" width="580" height="152" decoding="async"></div>
+          <div class="gr-logo"><img src="afirme-logo.png" alt="Afirme" width="483" height="90" decoding="async"></div>
           <div class="gr-title">Transferencia bancaria</div>
-          <div class="gr-bankname">Inbursa</div>
+          <div class="gr-bankname">Afirme</div>
           <div class="gr-accounts">
             <div class="gr-acc">
               <div class="gr-acc-info">
-                <div class="gr-acc-n">Rosario de la Cruz Coli</div>
-                <div class="gr-acc-c">4658 2859 1295 8926</div>
+                <div class="gr-acc-n">Hugo Villarreal Hernández</div>
+                <div class="gr-acc-c">4130 9804 0546 4163</div>
               </div>
-              <button class="gr-acc-btn copy-clabe" data-clabe="4658285912958926" type="button" aria-label="Copiar número de cuenta">
+              <button class="gr-acc-btn copy-clabe" data-clabe="4130980405464163" type="button" aria-label="Copiar número de cuenta">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
               </button>
             </div>
@@ -1271,7 +1260,7 @@ body.gift-locked{overflow:hidden}
     </div>
     <p class="eyebrow rv">Comparte el Momento</p>
     <h2 class="script-title rv">Álbum Compartido</h2>
-    <p class="album-note rv">¡Queremos ver la boda a través de tus ojos! Escanea el código y sube tus fotos al álbum de Rosario &amp; Hugo.</p>
+    <p class="album-note rv">¡Queremos ver la boda a través de tus ojos! Escanea el código y sube tus fotos al álbum de Hugo &amp; Rosario.</p>
     <div class="album-qr-wrap rv">
       <!-- PENDIENTE: link del álbum compartido (Drive). Al recibirlo, cambiar data= y quitar .qr-blur -->
       <img class="qr-blur" src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&color=003b10&bgcolor=FFFFFF&margin=18&data=https%3A%2F%2Fboda-hugo-villarreal-y-rosario-de-la-cruz.vercel.app" alt="" aria-hidden="true">
@@ -1303,7 +1292,8 @@ body.gift-locked{overflow:hidden}
 
         <div class="eyebrow">Confirmación de Asistencia</div>
         <h2 class="rsvp-title">Tu presencia <em>significa</em> todo</h2>
-        <p class="rsvp-text">Confirma tu asistencia antes del <strong>4 de noviembre de 2026</strong>. Nos encantaría saber que estarás con nosotros.</p>
+        <p class="rsvp-text">Nos encantaría saber que estarás con nosotros.</p>
+        <div class="rsvp-limit"><span class="rsvp-limit-lbl">Confirma antes del</span><span class="rsvp-limit-date">4 de noviembre de 2026</span></div>
 
         <p id="rsvp-name-display" style="display:none;font-family:var(--script);font-size:clamp(30px,7vw,44px);color:var(--accent);line-height:1.2;margin:18px auto 4px;"></p>
 
@@ -1333,7 +1323,7 @@ body.gift-locked{overflow:hidden}
 
         <div class="rsvp-deadline">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg>
-          Fecha límite · 4 Nov 2026
+          Fecha límite: 4 de noviembre de 2026
         </div>
       </div>
     </div>
@@ -1341,7 +1331,9 @@ body.gift-locked{overflow:hidden}
 
   <!-- ── 13. FOOTER ── -->
   <footer id="footer">
-    <div class="footer-names rv">Rosario &amp; Hugo</div>
+    <p class="closing-verse rv">&ldquo;Como llama divina<br>es el fuego ardiente del amor.<br>Ni las muchas aguas pueden apagarlo,<br>ni los ríos pueden extinguirlo.&rdquo;</p>
+    <span class="closing-cita rv">Cantares 8:7</span>
+    <div class="footer-names rv">Hugo &amp; Charo</div>
     <div class="footer-date rv">13 &middot; Noviembre &middot; 2026</div>
     <div class="footer-hr"></div>
     <a href="https://www.instagram.com/elysium.invitaciones" target="_blank" rel="noopener" class="footer-credit">@elysium.invitaciones</a>
@@ -1362,7 +1354,7 @@ body.gift-locked{overflow:hidden}
   <div class="vinyl-spin">
     <div class="vinyl-disc">
       <div class="vinyl-sheen"></div>
-      <div class="vinyl-label-text">R&amp;H<small>2026</small></div>
+      <div class="vinyl-label-text">H&amp;R<small>2026</small></div>
       <div class="vinyl-hole"></div>
     </div>
   </div>
@@ -1474,7 +1466,7 @@ function initEnvelope(){
 
 /* Countdown — Monclova, Coahuila · UTC−6 */
 (function initCountdown(){
-  const TARGET=new Date('2026-11-13T18:00:00-06:00').getTime();
+  const TARGET=new Date('2026-11-13T19:00:00-06:00').getTime();
   const pad=(n,w=2)=>String(n).padStart(w,'0');
   function tick(){
     const diff=TARGET-Date.now();
